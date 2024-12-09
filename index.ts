@@ -3,6 +3,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 import  express, { Application } from 'express'
 import cors from 'cors'
+import { 
+    errorHandler, 
+    notFoundHandler 
+  } from './middleware/errorMiddleware';
+import todoRoutes from './routes/todoRoute';
 
 
 const app:Application = express()
@@ -12,17 +17,22 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 
-//404 route handler
-app.all('*',(req,res) => {
-    res.status(404).send({
-        msg:"route does not exist"
-    })
-})
+
+app.use('/tasks', todoRoutes);
+
+
+
+app.use('*', notFoundHandler);
+
+// Global error handler (must be last)
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  errorHandler(err, req, res, next);
+});
 
 
 //start the server
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3002
 
 app.listen(PORT,() =>{
     console.log(`listening on port ${PORT}`)
