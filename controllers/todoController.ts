@@ -7,6 +7,7 @@ const prisma = new PrismaClient();
 
 const TodoSchema = z.object({
   title: z.string().min(1, 'Title is required'),
+  color:z.string(),
   completed: z.boolean().optional()
 });
 
