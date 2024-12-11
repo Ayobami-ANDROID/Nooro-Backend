@@ -40,4 +40,29 @@ This project is a **Backend for a Todo List App** built using **Express.js**. It
 
    ```bash
    git clone <repository-url>
-   cd backend
+   cd Nooro-Backend
+
+2. Install dependency:
+
+   ```bash
+   npm install
+
+3.Configure environment variables:
+  - create  a `.env` file in the root directory and add the following
+    ```bash
+    DATABASE_URL="mysql://username:password@localhost:3306/todo_db"
+
+  Replace `username`, `password`, and `todo_db` with your MySQL credentials and database name.
+
+4. Set up database
+   ```bash
+   npx prisma migrate dev --name init
+
+5. Start the development server:
+   ```npm run dev
+   
+6.The backend API will be accessible at `http://localhost:3002`.
+
+
+   
+   
