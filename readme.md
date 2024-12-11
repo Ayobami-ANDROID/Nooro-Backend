@@ -67,7 +67,7 @@ This project is a **Backend for a Todo List App** built using **Express.js**. It
 5. Start the development server:
 
    ```bash
-   npm run dev
+   npm run start
    ```
 
 6. The backend API will be accessible at `http://localhost:3002`.
