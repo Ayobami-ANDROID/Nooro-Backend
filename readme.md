@@ -40,8 +40,8 @@ This project is a **Backend for a Todo List App** built using **Express.js**. It
 1. Clone the repository:
 
    ```bash
-   git clone 
-   cd Nooro-Backend https://github.com/Ayobami-ANDROID/Nooro-Backend.git
+   git clone https://github.com/Ayobami-ANDROID/Nooro-Backend.git
+   cd Nooro-Backend 
    ```
 
 2. Install dependencies:
