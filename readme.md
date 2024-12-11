@@ -52,17 +52,45 @@ This project is a **Backend for a Todo List App** built using **Express.js**. It
     ```bash
     DATABASE_URL="mysql://username:password@localhost:3306/todo_db"
 
-  Replace `username`, `password`, and `todo_db` with your MySQL credentials and database name.
+    Replace `username`, `password`, and `todo_db` with your MySQL credentials and database name.
 
 4. Set up database
    ```bash
    npx prisma migrate dev --name init
 
 5. Start the development server:
-   ```npm run dev
-   
+   ```bash
+   npm run dev
+
 6.The backend API will be accessible at `http://localhost:3002`.
 
 
-   
+##End points
+
+### `Get /tasks`
+   - Fetches a list of all tasks.
+   - Response:
+   ```bash
+   [
+    {
+    "id": 1,
+    "title": "Sample Task",
+    "color": "blue",
+    "completed": false,
+    "createdAt": "2024-01-01T12:00:00.000Z",
+    "updatedAt": "2024-01-01T12:00:00.000Z"
+   }
+  ]
+
+### `POST /tasks`
+    - Creates a new task.
+    - Request body:
+    ```bash
+    {
+  "title": "New Task",
+  "color": "red"
+  }
+
+
+
    
